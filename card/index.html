@@ -1,113 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fammad — Digital Business Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fammad — Digital Contact Card</title>
+
   <style>
     :root {
+      --brand: #4c3aff; /* purple accent similar to fammad.io */
+      --text-dark: #0f0f0f;
+      --text-muted: #555;
       --bg: #ffffff;
-      --text: #111;
-      --accent: #0a0a0a;
-      --muted: #555;
-      --radius: 16px;
-      --card-bg: #f8f8f8;
+      --section-bg: #f7f7fb;
+      --radius: 18px;
+      --max-width: 680px;
+      --shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
+
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      padding: 24px;
     }
-    .card {
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: var(--radius);
-      max-width: 480px;
+
+    .wrapper {
       width: 100%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: var(--max-width);
+      background: var(--section-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
       text-align: center;
+      margin-bottom: 24px;
     }
-    .card h1 {
+    .logo {
+      width: 140px;
+      margin-bottom: 10px;
+    }
+    h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 28px;
+      font-weight: 700;
     }
-    .card h2 {
-      margin: 8px 0 20px 0;
-      font-size: 18px;
-      color: var(--muted);
-    }
-    .contact {
-      margin-bottom: 20px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 6px;
-      color: var(--accent);
-      text-decoration: none;
+    h2 {
+      margin-top: 6px;
+      font-size: 16px;
+      color: var(--text-muted);
       font-weight: 500;
     }
-    .actions {
+
+    .profile-image {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      margin-top: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .section h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .social-links a img {
+      width: 34px;
+      height: 34px;
+      transition: 0.2s;
+    }
+    .social-links a img:hover {
+      transform: scale(1.15);
+    }
+
+
+    .btn {
+      background: var(--brand);
+      color: #fff;
+      padding: 12px;
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 600;
+      margin-top: 12px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      background: #e5e5ff;
+      color: var(--brand);
+    }
+
+    .qr-container {
+      text-align: center;
       margin-top: 20px;
     }
-    .btn {
-      background: var(--accent);
-      color: white;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 4px;
-    }
-    .btn.download {
-      background: #444;
-    }
     .qr {
-      margin-top: 24px;
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
+      background: #fff;
       border-radius: 12px;
-      background: white;
-      display: inline-block;
-      overflow: hidden;
+      padding: 10px;
+      box-shadow: var(--shadow);
     }
-    .qr img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .note {
-      margin-top: 12px;
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
       font-size: 13px;
-      color: var(--muted);
+      color: var(--text-muted);
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Fammad</h1>
-    <h2>Founder — fammad.io</h2>
-    <div class="contact">
-      <a href="https://fammad.io" target="_blank">Website</a>
-      <a href="https://linkedin.com/in/fammad" target="_blank">LinkedIn</a>
-      <a href="https://github.com/fammad" target="_blank">GitHub</a>
-      <a href="https://youtube.com/@fammad" target="_blank">YouTube</a>
-      <a href="https://facebook.com/fammad" target="_blank">Facebook</a>
+  <div class="wrapper">
+
+    <header>
+      <!-- Replace YOUR_LOGO.png -->
+      <img class="logo" src="Logo.png" alt="Fammad Logo" />
+      <h1>Fuad — Fammad</h1>
+      <h2>Engineer • Developer • Tech Lead</h2>
+    </header>
+
+    <!-- Replace with your own photo if wanted -->
+    <img class="profile-image" src="PP.jpg" alt="Profile image" />
+
+    <div class="section">
+      <h3>Download My Contact</h3>
+      <a class="btn" href="fuad_mammad.vcf" download>📄 Download vCard (.vcf)</a>
+      <a class="btn secondary" href="portfolio.pdf" download>🖼️ Save Gallery Portfolio</a>
+
+      <div class="qr-container">
+        <!-- Replace qr.png -->
+        <img class="qr" src="qr.jpg" alt="QR Code" />
+        <p style="color:var(--text-muted); margin-top:6px;">Scan to save my contact</p>
+      </div>
     </div>
-    <div class="actions">
-      <a class="btn download" href="fuad_mammad.vcf" download>Download vCard</a>
+
+    <div class="section">
+      <h3>Social Links</h3>
+      <div class="social-links">
+        <!-- Replace links as needed -->
+        <a href="https://linkedin.com/in/fammad" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+        <a href="https://youtube.com/@fammad" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+        <a href="https://instagram.com/fammad" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+      </div>
     </div>
-    <div class="qr">
-      <img src="qr.jpg" alt="QR code with vCard link or content" />
-    </div>
-    <p class="note">Scan the QR to save my contact or download the vCard.</p>
+
+    <footer>
+      © 2025 Fammad.io — Digital Business Card
+    </footer>
+
   </div>
 </body>
 </html>
